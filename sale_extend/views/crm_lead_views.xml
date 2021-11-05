@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+        <record id="inherit_crm_lead_form_currency" model="ir.ui.view">
+            <field name="name">crm.lead.order.form</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='lead_partner']" position="inside">
+                    <field name="currency_id" />
+                </xpath>
+                <field name="expected_revenue" position="attributes">
+                    <attirbute name="options">{'currency_field': 'currency_id'}</attirbute>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>
