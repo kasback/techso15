@@ -8,9 +8,10 @@
     'author': 'Osisoftware',
     'website': '',
     'depends': [
-        'base', 'web', 'sale'
+        'base', 'web', 'sale', 'crm'
     ],
     'data': [
+        'report/report_sale.xml',
         'report/export_report_sale_template.xml',
         'report/report.xml',
         'views/sale_order_views.xml',
