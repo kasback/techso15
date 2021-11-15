@@ -7,10 +7,8 @@
             <field name="model">sale.order</field>
             <field name="inherit_id" ref="sale.view_order_form"/>
             <field name="arch" type="xml">
-                <field name="payment_term_id" position="after">
-                    <field name="objet" />
-                </field>
                 <field name="tag_ids" position="after">
+                    <field name="objet" />
                     <field name="texte_en_tete" />
                 </field>
                 <xpath expr="//notebook/page[1]/field[1]/tree/field[1]" position="before">
