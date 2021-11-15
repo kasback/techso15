@@ -11,9 +11,6 @@
                     <field name="objet" />
                     <field name="texte_en_tete" />
                 </field>
-                <xpath expr="//notebook/page[1]/field[1]/tree/field[1]" position="before">
-                    <field name="product_type" readonly="0"/>
-                </xpath>
             </field>
         </record>
     </data>
