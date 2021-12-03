@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="invoice_footer_infos" inherit_id="account.report_invoice_document">
+        <xpath expr="//div[@name='comment']" position="after">
+            <p>
+                <t t-esc="o.footer_text"/>
+            </p>
+        </xpath>
+    </template>
+</odoo>

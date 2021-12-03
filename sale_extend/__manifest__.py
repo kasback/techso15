@@ -8,14 +8,16 @@
     'author': 'Osisoftware',
     'website': '',
     'depends': [
-        'base', 'web', 'sale', 'crm'
+        'base', 'web', 'sale', 'crm', 'account'
     ],
     'data': [
         'report/report_sale.xml',
         'report/export_report_sale_template.xml',
+        'report/move_report_template.xml',
         'report/report.xml',
         'views/sale_order_views.xml',
         'views/crm_lead_views.xml',
+        'views/account_move_views.xml'
     ],
     'installable': True,
     'application': True,
