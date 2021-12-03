@@ -8,7 +8,7 @@
     'author': 'Osisoftware',
     'website': '',
     'depends': [
-        'base', 'web', 'sale', 'crm'
+        'base', 'web', 'sale', 'crm', 'account'
     ],
     'data': [
         'report/report_sale.xml',
