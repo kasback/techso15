@@ -8,6 +8,18 @@
                     tr {
                         line-height: 32px !important;
                     }
+                    .no-border{
+                        width:100%;
+                        border:0 !important;
+                    }
+                    .no-border tr{
+                        border:0 !important;
+                        background-color:#FFFFFF !important;
+                    }
+                    .no-border td{
+                        border:0 !important;
+                        background-color:#FFFFFF !important;
+                    }
                 </style>
                 <div class="oe_structure"/>
                 <div class="row" style="margin-bottom:30px;">
@@ -21,8 +33,7 @@
                             <span t-field="doc.name"/>
                             <br/>
                             <h3>
-                                <span t-if="doc.date_order" t-field="doc.date_order"
-                                      t-options="{'widget': 'date'}"/>
+                                <span t-if="doc.date_order" t-esc="doc.date_order.strftime('%d %B %Y')"/>
                             </h3>
                         </h2>
                     </div>
@@ -35,7 +46,7 @@
                 <div class="row">
                     <div class="col-6" style="margin-bottom:20px;">
                         <h3>Emetteur</h3>
-                        <table style="width:100%;">
+                        <table class="no-border">
                             <colgroup>
                                 <col width='40%'/>
                                 <col width='60%'/>
@@ -90,7 +101,7 @@
                     <div class="col-6" style="width:100%;">
                         <h3>Destinataire</h3>
                         <p>
-                            <table>
+                            <table class="no-border">
                                 <colgroup>
                                     <col width='30%'/>
                                     <col width='70%'/>
