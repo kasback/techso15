@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="purchase_report_paperformat" model="report.paperformat">
+            <field name="name">Format d'impression commande fournisseur</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">10</field>
+            <field name="margin_bottom">30</field>
+            <field name="margin_left">3</field>
+            <field name="margin_right">3</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">30</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <record id="report_export_purchase_order" model="ir.actions.report">
+            <field name="name">Commande fournisseur Techsogroup</field>
+            <field name="model">purchase.order</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">purchase_extend.report_purchaseorder_custom</field>
+            <field name="report_file">purchase_extend.report_purchaseorder_custom</field>
+            <field name="print_report_name">(object.state in ('draft', 'sent') and 'BC Achats - %s' % (object.name)) or 'Order - %s' % (object.name)</field>
+            <field name="binding_model_id" ref="purchase.model_purchase_order"/>
+            <field name="binding_type">report</field>
+            <field name="paperformat_id" ref="purchase_extend.purchase_report_paperformat" />
+        </record>
+    </data>
+</odoo>
