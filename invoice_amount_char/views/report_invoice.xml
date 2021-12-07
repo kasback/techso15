@@ -3,7 +3,7 @@
     <template id="invoice_amount_to_text" inherit_id="account.report_invoice_document">
         <xpath expr="//p[@t-if='o.invoice_payment_term_id']" position="before">
             <p t-if="o.partner_id.lang == 'fr_FR'">
-                <strong>Arrêtée la présente facture à la somme TTC de:</strong>
+                <strong>Arrêtée la présente facture à la somme de:</strong>
                 <span t-esc="o.amount_text"/>
             </p>
         </xpath>
@@ -13,13 +13,4 @@
             </td>
         </xpath>
     </template>
-
-    <!--<template id="account_invoice_mode_reglement" inherit_id="report_bl_facture.report_facture_bl_document">
-        <xpath expr="//p[@t-if='o.comment']" position="after">
-            <p t-if="o.partner_id.lang == 'fr_FR'">
-                <strong>Arrêtée la présente facture à la somme TTC de:</strong>
-                <span t-esc="o.amount_text"/>
-            </p>
-        </xpath>
-    </template>-->
 </odoo>
