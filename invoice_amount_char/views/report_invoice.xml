@@ -7,6 +7,11 @@
                 <span t-esc="o.amount_text"/>
             </p>
         </xpath>
+        <xpath expr="//tbody[@class='invoice_tbody']/t/tr/t/td[2]" position="replace">
+            <td class="text-right">
+                <span t-field="line.quantity"/>
+            </td>
+        </xpath>
     </template>
 
     <!--<template id="account_invoice_mode_reglement" inherit_id="report_bl_facture.report_facture_bl_document">
