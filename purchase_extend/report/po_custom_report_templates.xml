@@ -7,33 +7,40 @@
                 text-align: center !important;
                 }
                 .no-border{
-                    width:100%;
-                    border:1px solid black !important;
+                width:100%;
+                border:1px solid black !important;
                 }
                 .no-border td{
-                    background-color:#FFFFFF !important;
-                    text-align:center;
-                    border:1px solid black !important;
+                background-color:#FFFFFF !important;
+                text-align:center;
+                border:1px solid black !important;
                 }
                 .no-border p{
-                    color:#000000;
-                    text-align:center;
+                color:#000000;
+                text-align:center;
                 }
                 .no-border th{
-                    color:#000000;
-                    text-align:center;
+                color:#000000;
+                text-align:center;
                 }
                 div{
-                    margin-bottom: 8px;
-                    margin-top: 8px;
+                margin-bottom: 8px;
+                margin-top: 8px;
                 }
             </style>
             <t t-set="o" t-value="o.with_context(lang=o.partner_id.lang)"/>
-
-            <div t-if="o.date_order" style="text-align:right;">
-                <strong>Date</strong>
-                <span t-esc="o.date_order.strftime('%d %B %Y')" class="m-0"/>
+            <div class="row">
+                <div class="col-4" style="text-align:left;">
+                    <img class="img img-fluid d-block mx-auto" src="/web/binary/company_logo" alt="Logo"/>
+                </div>
+                <div class="col-4" style="text-align:left;">
+                </div>
+                <div class="col-4" t-if="o.date_order" style="text-align:right;">
+                    <strong>Date</strong>
+                    <span t-esc="o.date_order.strftime('%d %B %Y')" class="m-0"/>
+                </div>
             </div>
+
             <div style="text-align:center;">
                 <h2 t-if="o.state in ['draft', 'sent', 'to approve']">Demande de prix N#
                     <span t-field="o.name"/>
