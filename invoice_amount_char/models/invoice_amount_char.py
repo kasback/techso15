@@ -14,4 +14,4 @@ class AccountInvoice(models.Model):
     @api.depends('amount_total', 'total_a_payer', 'currency_id.symbol')
     def _get_amount_text(self):
         for invoice in self:
-            invoice.amount_text = convertion.trad(invoice.amount_total,invoice.currency_id.name)
+            invoice.amount_text = convertion.trad(invoice.amount_total,invoice.currency_id.currency_unit_label)
