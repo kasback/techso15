@@ -6,5 +6,14 @@
                 <span t-field="line.product_uom_qty"/>
             </td>
         </xpath>
+        <xpath expr="//th[@name='th_taxes']" position="replace">
+            <th name="th_taxes" style="display:none;"
+                t-attf-class="text-left {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}">
+                <span>Taxes</span>
+            </th>
+        </xpath>
+        <xpath expr="//tbody[@class='sale_tbody']/t/tr/t/td[@name='td_taxes']" position="replace">
+            <span t-esc="', '.join(map(lambda x: (x.description or x.name), line.tax_id))"/>
+        </xpath>
     </template>
 </odoo>
