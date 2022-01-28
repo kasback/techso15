@@ -13,7 +13,7 @@
             </th>
         </xpath>
         <xpath expr="//tbody[@class='sale_tbody']/t/tr/t/td[@name='td_taxes']" position="replace">
-            <span t-esc="', '.join(map(lambda x: (x.description or x.name), line.tax_id))"/>
+            <span t-esc="', '.join(map(lambda x: (x.description or x.name), line.tax_id))" style="display:none;"/>
         </xpath>
     </template>
 </odoo>
