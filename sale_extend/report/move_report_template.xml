@@ -3,7 +3,7 @@
     <template id="invoice_footer_infos" inherit_id="account.report_invoice_document">
         <xpath expr="//div[@name='comment']" position="after">
             <p>
-                <t t-esc="o.footer_text"/>
+                <t t-esc="o.partner_bank_id.footer_text"/>
             </p>
         </xpath>
         <xpath expr="//th[@name='th_taxes']" position="replace">

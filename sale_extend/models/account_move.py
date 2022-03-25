@@ -3,8 +3,8 @@
 from odoo import models, fields
 
 
-class AccountMove(models.Model):
-    _inherit = 'account.move'
+class ResPartnerBank(models.Model):
+    _inherit = 'res.partner.bank'
 
     def get_footer_text(self):
         return """
